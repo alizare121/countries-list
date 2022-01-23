@@ -1,28 +1,41 @@
-import React, { useState, useEffect } from 'react';
-import { ThemeContext, themes } from './themeContext';
+import { createContext, useState, useEffect } from 'react';
 
-export function ThemeProvider(props) {
-  const [theme, setTheme] = useState(themes.dark);
+const themes = {
+  dark: {
+    backgroundColor: 'hsl(207, 26%, 17%)',
+    color: 'hsl(0, 0%, 100%)',
+  },
+  light: {
+    backgroundColor: 'hsl(0, 0%, 98%)',
+    color: 'hsl(200, 15%, 8%)',
+  },
+};
 
-  function changeTheme(theme) {
-    setTheme(theme);
-  }
+export const ThemeContext = createContext();
+
+export const ThemeProvider = ({ children }) => {
+  const [isDark, setIsDark] = useState(false);
+  const toggleTheme = () => {
+    localStorage.setItem('isDark', JSON.stringify(!isDark));
+    setIsDark(!isDark);
+  };
+  const theme = isDark ? themes.dark : themes.light;
 
   useEffect(() => {
-    switch (theme) {
-      case themes.light:
-        document.body.classList.add('white-content');
-        break;
-      case themes.dark:
-      default:
-        document.body.classList.remove('white-content');
-        break;
-    }
-  }, [theme]);
+    const isDark = localStorage.getItem('isDark') === 'true';
+    setIsDark(isDark);
+  }, []);
 
   return (
-    <ThemeContext.Provider value={{ theme: theme, changeTheme: changeTheme }}>
-      {props.children}
+    <ThemeContext.Provider value={[toggleTheme, { theme, isDark }]}>
+      <body
+        style={{
+          backgroundColor: theme.backgroundColor,
+          color: theme.color,
+          height: '100vh',
+        }}>
+        {children}
+      </body>
     </ThemeContext.Provider>
   );
-}
+};

@@ -1,10 +1,14 @@
-import { ThemeProvider, Icon } from '@components';
+import { ThemeContext, Icon } from '@components';
+import { useContext } from 'react';
 
 function App() {
+  const [toggleTheme] = useContext(ThemeContext);
   return (
-    <div className='App'>
+    <div>
       ali baba test
-      <Icon name='arrow-left' />
+      <div onClick={toggleTheme}>
+        <Icon name='moon' />
+      </div>
     </div>
   );
 }
