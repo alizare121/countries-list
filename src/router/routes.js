@@ -1,7 +1,8 @@
 import { lazy } from 'react';
 
-const CountriesList = lazy(() => import('../components/pages/CountriesList'));
-const CountryDetail = lazy(() => import('../components/pages/CountryDetail'));
+import CountriesList from '../components/pages/CountriesList';
+import CountryDetail from '../components/pages/CountryDetail';
+
 export const routes = [
   {
     id: 0,
