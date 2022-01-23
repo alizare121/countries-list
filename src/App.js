@@ -1,15 +1,14 @@
 import { ThemeContext, Icon } from '@components';
 import { useContext } from 'react';
-
+import { Router } from 'react-router-dom';
+import PrivateRoutes from './router/PrivateRoutes';
+import history from './router/history';
 function App() {
   const [toggleTheme] = useContext(ThemeContext);
   return (
-    <div>
-      ali baba test
-      <div onClick={toggleTheme}>
-        <Icon name='moon' />
-      </div>
-    </div>
+    <Router {...{ history }}>
+      <PrivateRoutes />
+    </Router>
   );
 }
 

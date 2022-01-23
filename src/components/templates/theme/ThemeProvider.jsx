@@ -28,14 +28,14 @@ export const ThemeProvider = ({ children }) => {
 
   return (
     <ThemeContext.Provider value={[toggleTheme, { theme, isDark }]}>
-      <body
+      <div
         style={{
           backgroundColor: theme.backgroundColor,
           color: theme.color,
           height: '100vh',
         }}>
         {children}
-      </body>
+      </div>
     </ThemeContext.Provider>
   );
 };

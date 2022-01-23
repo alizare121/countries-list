@@ -5,3 +5,4 @@ export {
   ThemeProvider,
   ThemeContext,
 } from './templates/theme/ThemeProvider.jsx';
+export { NavBar } from './templates/NavBar';
