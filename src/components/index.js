@@ -1,6 +1,10 @@
-//atoms component
+//atoms
 export { Icon } from './atoms/icon';
-// templates component
+
+//molecules
+export { Button } from './molecules/Button';
+
+// templates
 export {
   ThemeProvider,
   ThemeContext,

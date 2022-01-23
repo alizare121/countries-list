@@ -4,10 +4,13 @@ const themes = {
   dark: {
     backgroundColor: 'hsl(207, 26%, 17%)',
     color: 'hsl(0, 0%, 100%)',
+    elementBg: ' hsl(209, 23%, 22%)',
   },
   light: {
     backgroundColor: 'hsl(0, 0%, 98%)',
     color: 'hsl(200, 15%, 8%)',
+    input: 'hsl(0, 0%, 52%)',
+    elementBg: 'hsl(0, 0%, 100%)',
   },
 };
 
