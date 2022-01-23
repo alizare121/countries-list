@@ -1,0 +1,40 @@
+.card-wrapper {
+  width: 250px !important;
+  height: 340px;
+  box-shadow: 15px 15px 20px -15px #111;
+  margin: 10px;
+  border-radius: 5px;
+  overflow: hidden;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.flag {
+  width: 250px;
+  height: 150px;
+  object-fit: cover;
+}
+
+.info-item-wrapper {
+  margin: 1rem;
+}
+
+.card-item-wrapper {
+  margin-bottom: 0.4rem;
+}
+
+.name {
+  display: block;
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+}
+
+.item-title {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.item-value {
+  font-size: 14px;
+  font-weight: 300;
+}
