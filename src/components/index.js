@@ -3,6 +3,7 @@ export { Icon } from './atoms/icon';
 export { Card, InfoItem } from './atoms/card';
 export { Input } from './atoms/input';
 export { Dropdown } from './atoms/dropdown';
+export { Loading } from './atoms/loading';
 
 //molecules
 export { Button } from './molecules/Button';

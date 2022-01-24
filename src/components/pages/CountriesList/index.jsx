@@ -1,5 +1,5 @@
 import { useRequest, useStates, useHistory } from '@utils';
-import { Card, Input, Dropdown } from '@components';
+import { Card, Input, Dropdown, Loading } from '@components';
 import './styles.css';
 import { useEffect } from 'react';
 
@@ -126,7 +126,7 @@ function CountriesList() {
           onSelect={onSelectRegion}
         />
       </div>
-      {isLoading && <span> is Loading .... </span>}
+      {isLoading && <Loading />}
       <div className='items-wrapper'>
         {response &&
           response.map((item) => {

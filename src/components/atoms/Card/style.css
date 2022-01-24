@@ -6,6 +6,7 @@
   border-radius: 5px;
   overflow: hidden;
   border: 1px solid rgba(0, 0, 0, 0.2);
+  cursor: pointer;
 }
 
 .flag {
@@ -41,6 +42,11 @@
 .item-value {
   font-size: 14px;
   font-weight: 300;
+}
+
+.item-tag-value {
+  box-shadow: 15px 15px 20px -15px #111;
+  border: 1px solid rgba(0, 0, 0, 0.2);
 }
 
 .list-item-wrapper {

@@ -12,6 +12,7 @@ export const InfoItem = ({ title, value, tag }) => {
     padding: '4px 10px',
     margin: '0 0 0 5px',
     borderRadius: '5px',
+
   };
   return (
     <div className='card-item-wrapper'>
@@ -23,7 +24,7 @@ export const InfoItem = ({ title, value, tag }) => {
             const isLastItem = index === value.length - 1;
             const separator = !isLastItem && !tag && ',';
             return (
-              <span className='item-value' style={tag && itemStyle}>
+              <span className={`item-value ${tag && 'item-tag-value'}`} style={tag && itemStyle}>
                 {tag ? item : item.name || ''} {separator}
               </span>
             );
