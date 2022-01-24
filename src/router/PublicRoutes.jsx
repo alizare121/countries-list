@@ -24,20 +24,16 @@ const PublicRoutes = () => {
             }}
           />
         )}
-        <Switch>
-          {routes &&
-            routes.map((item) => {
-              console.log(item);
-              return (
-                <Route
-                  key={item.id}
-                  exact={item.exact}
-                  //path={`${url}/${item.path}`}
-                  component={item.component}
-                />
-              );
-            })}
-        </Switch>
+        {routes?.map((item) => {
+          return (
+            <Route
+              key={item.id}
+              exact={item.exact}
+              path={url+item.path}
+              component={item.component}
+            />
+          );
+        })}
       </Switch>
     </Suspense>
   );

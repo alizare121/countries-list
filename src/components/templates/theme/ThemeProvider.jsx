@@ -35,7 +35,7 @@ export const ThemeProvider = ({ children }) => {
         style={{
           backgroundColor: theme.backgroundColor,
           color: theme.color,
-          height: '100%',
+          minHeight: '100vh',
         }}>
         {children}
       </div>

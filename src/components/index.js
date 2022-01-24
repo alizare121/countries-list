@@ -1,6 +1,8 @@
 //atoms
 export { Icon } from './atoms/icon';
-export { Card } from './atoms/Card';
+export { Card } from './atoms/card';
+export { Input } from './atoms/input';
+export { Dropdown } from './atoms/dropdown';
 
 //molecules
 export { Button } from './molecules/Button';

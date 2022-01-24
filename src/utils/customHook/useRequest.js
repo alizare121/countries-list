@@ -1,4 +1,4 @@
-import { useEffect, useCallback } from 'react';
+import { useEffect } from 'react';
 import { useStates } from '@utils';
 
 const initialState = {
@@ -9,12 +9,16 @@ const initialState = {
 
 export const useRequest = ({ url, method = 'get' }) => {
   const [state, setState] = useStates(initialState);
-  const { response, error, isLoading, params } = state;
+  const { response, error, isLoading } = state;
   const fetchData = async () => {
     setState({ isLoading: true });
     try {
-      const result = await (await fetch(url, { method })).json().then((res) => {
-        setState({ response: res });
+      await (await fetch(url, { method })).json().then((res) => {
+        if (res.status === 404) {
+          setState({ error: res.message });
+        } else {
+          setState({ response: res });
+        }
       });
     } catch (error) {
       setState({ error: error });

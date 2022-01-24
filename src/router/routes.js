@@ -1,5 +1,3 @@
-import { lazy } from 'react';
-
 import CountriesList from '../components/pages/CountriesList';
 import CountryDetail from '../components/pages/CountryDetail';
 

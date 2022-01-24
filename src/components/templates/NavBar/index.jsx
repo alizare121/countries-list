@@ -1,5 +1,5 @@
 import { useContext } from 'react';
-import { ThemeContext, Icon, Button } from '@components';
+import { ThemeContext, Button } from '@components';
 import './style.css';
 
 export const NavBar = () => {

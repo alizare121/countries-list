@@ -1,7 +1,15 @@
 .items-wrapper {
   display: flex;
   flex-direction: row;
-  overflow: scroll;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: space-evenly;
+}
+
+.filter-wrapper {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 0 4rem 0 4rem;
+  align-items: center;
 }
