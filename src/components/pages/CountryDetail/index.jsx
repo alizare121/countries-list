@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import { getQueryParams, useRequest } from '@utils';
 import { InfoItem, Button } from '@components';
 import './style.css';
@@ -10,6 +11,12 @@ export default function CountryDetail() {
   } = useRequest({
     url: `https://restcountries.com/v2/callingcode/${COUNTRY_ID}`,
   });
+
+  useEffect(() => {
+    if (error) {
+      alert(error);
+    }
+  }, [error]);
 
   const {
     flag,
@@ -25,8 +32,6 @@ export default function CountryDetail() {
     borders,
   } = (response && response[0]) || {};
 
-  console.log('detail', response);
-
   return (
     <div className='detail-container'>
       <Button title='Back' iconName='arrow-left' primary />
@@ -36,7 +41,8 @@ export default function CountryDetail() {
         <div>
           <div className='detail-info-wrapper'>
             <div>
-              <span>{name}</span>
+              <span className='country-name'>{name}</span>
+
               <InfoItem title='Native Name' value={nativeName} />
               <InfoItem title='Population' value={population} />
               <InfoItem title='Region' value={region} />
@@ -45,7 +51,10 @@ export default function CountryDetail() {
             </div>
 
             <div>
-              <InfoItem title='Top Level Domain' value={topLevelDomain[0]} />
+              <InfoItem
+                title='Top Level Domain'
+                value={topLevelDomain && topLevelDomain[0]}
+              />
               <InfoItem title='Currencies' value={currencies} />
               <InfoItem title='Languages' value={languages} />
             </div>

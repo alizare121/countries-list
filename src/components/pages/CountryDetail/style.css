@@ -3,17 +3,21 @@
 }
 
 .detail-flag {
-  width: 30rem;
+  width: 40%;
+  min-width: 18rem;
   object-fit: fill;
   height: max-content;
+  margin-bottom: 2rem;
 }
 
 .detail-card-wrapper {
   display: flex;
   flex-direction: row;
   align-items: center;
+  justify-content: space-between;
   height: max-content;
   margin-top: 3rem;
+  flex-wrap: wrap;
 }
 
 .detail-info-wrapper {
@@ -22,10 +26,16 @@
   align-items: center;
   justify-content: space-between;
   height: max-content;
-  width: 100%;
-  margin-left: 5rem;
+  flex-wrap: wrap;
 }
 
 .border-info {
-  margin: 2rem 5rem;
+  margin-top: 1rem;
+}
+
+.country-name {
+  font-size: 16px;
+  font-weight: 800;
+  margin-bottom: 1rem;
+  display: block;
 }

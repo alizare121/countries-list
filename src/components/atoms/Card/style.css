@@ -20,6 +20,10 @@
 
 .card-item-wrapper {
   margin-bottom: 0.4rem;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
 }
 
 .name {
@@ -37,4 +41,10 @@
 .item-value {
   font-size: 14px;
   font-weight: 300;
+}
+
+.list-item-wrapper {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
 }
