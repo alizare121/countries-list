@@ -1,6 +1,6 @@
 //atoms
 export { Icon } from './atoms/icon';
-export { Card } from './atoms/card';
+export { Card, InfoItem } from './atoms/card';
 export { Input } from './atoms/input';
 export { Dropdown } from './atoms/dropdown';
 

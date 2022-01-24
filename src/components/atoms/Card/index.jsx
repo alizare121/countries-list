@@ -1,16 +1,37 @@
+import { useContext } from 'react';
+import { ThemeContext } from '@components';
 import './style.css';
+export const InfoItem = ({ title, value, tag }) => {
+  const [_, { theme }] = useContext(ThemeContext);
+  const isArrayValue = Array.isArray(value);
+  const itemStyle = {
+    backgroundColor: theme.elementBg,
+    color: theme.color,
+    padding: '4px 10px',
+    margin: '0 0 0 5px',
+    borderRadius: '5px',
+  };
+  return (
+    <div className='card-item-wrapper'>
+      <span className='item-title'>{title} : </span>
+      {!isArrayValue && <span className='item-value'>{value || ''}</span>}
+      {isArrayValue &&
+        value.map((item, index) => {
+          const isLastItem = index === value.length - 1;
+          const separator = !isLastItem && !tag && ',';
+          return (
+            <span className='item-value' style={tag && itemStyle}>
+              {tag ? item : item.name || ''} {separator}
+            </span>
+          );
+        })}
+    </div>
+  );
+};
 export const Card = ({
   data: { flag, population, region, capital, name },
   onClick,
 }) => {
-  const InfoItem = ({ title, value }) => {
-    return (
-      <div className='card-item-wrapper'>
-        <span className='item-title'>{title} : </span>
-        <span className='item-value'>{value}</span>
-      </div>
-    );
-  };
   return (
     <div className='card-wrapper' onClick={onClick}>
       <img src={flag} alt={name} className='flag' />

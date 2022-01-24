@@ -108,8 +108,8 @@ function CountriesList() {
     });
   };
 
-  const gotToDetail = () => {
-    history.push('/country-detail');
+  const gotToDetail = ({ callingCodes }) => {
+    history.push(`/country-detail?id=${callingCodes[0]}`);
   };
 
   return (
